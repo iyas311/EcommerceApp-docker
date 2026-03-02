@@ -13,8 +13,7 @@ public class DBConnect
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-		//	conn = DriverManager.getConnection("jdbc:sqlite:mydatabase.db");
-			conn = DriverManager.getConnection("jdbc:sqlite:C:/Users/Swapnil/eclipse-workspace/Online Electronic Shopping/mydatabase.db");
+			conn = DriverManager.getConnection(System.getenv("DB_URL"), System.getenv("DB_USER"), System.getenv("DB_PASS"));
 			
 		}catch (Exception e) {
 			e.printStackTrace();
